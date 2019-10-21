@@ -4,7 +4,7 @@ class Test
     # returns ciphered : String
     def rot13(string)
         ciphered = String.new
-        alphabet = "abcdefghijklmnopqrstuvwxyz"
+        alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
         # For each char in string, cipher if c is a letter, otherwise add the char
         string.each_char{ |c|

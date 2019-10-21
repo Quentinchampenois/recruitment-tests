@@ -1,0 +1,9 @@
+<%= render partial: 'shared/header' %>
+
+<h1>Ajouter un lien</h1>
+        <%= form_with scope: :link, class: 'col-10 offset-1', url: links_path, local: true do |form| %>
+            <%= render partial: 'fields', locals: {'form': form}%>
+            <div class="d-flex justify-content-center">
+                <%= form.submit 'Créer', :class => 'col-4 btn btn-success' %>
+            </div>
+        <% end %>

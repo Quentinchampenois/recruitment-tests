@@ -1,0 +1,15 @@
+
+<% links.each do |link| %>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title"><%= link.title %></h5>
+            <%= link_to link.link, "http://#{link.link}", target: '_blank', class: 'card-subtitle mb-2 text-muted' %>
+            <p class="card-text"><%= link.description %></p>
+            <%= link_to 'Voir', link_path(link), class: 'btn btn-info' %>
+            <%= link_to 'Éditer', edit_link_path(link), class: 'btn btn-success' %>
+            <%= link_to 'Supprimer', link_path(link),
+            method: :delete,
+            data: { confirm: 'Voulez-vous supprimer ce lien ?' }, class: 'btn btn-danger' %>
+        </div>
+    </div>
+<% end %>

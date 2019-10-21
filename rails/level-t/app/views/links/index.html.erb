@@ -1,0 +1,20 @@
+<%= render partial: 'shared/header' %>
+
+<main class="container">
+    <section>
+        <% if @links.count > 0 %>
+            <div class="d-flex flex-wrap">
+                <%= render partial: 'linklist', locals: {'links': @links} %>
+
+            </div>
+        <% else %>
+            <p class="alert alert-danger">Pas de liens disponibles</p>
+        <% end%>
+    </section>
+
+    <section>
+        <h3>Créer un nouveau lien</h3>
+        <%= link_to 'Créer une nouveau lien', new_link_path, class: 'btn btn-success' %>
+
+    </section>
+</main>

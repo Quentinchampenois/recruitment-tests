@@ -3,7 +3,7 @@
 
 ## What is an Object? 
 
-    Answer ->
+    Answer -> An object is an instanciation of a Class. It can 
 
 ## Can you explain the difference between include and extend in Ruby?
 
