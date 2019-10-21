@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_21_132115) do
+ActiveRecord::Schema.define(version: 2019_10_21_181855) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(version: 2019_10_21_132115) do
     t.text "description"
     t.string "name"
     t.string "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "shorteners", force: :cascade do |t|
+    t.string "original_url", default: "", null: false
+    t.string "shorted_url", default: "", null: false
+    t.integer "visits", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

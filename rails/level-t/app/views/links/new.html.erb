@@ -1,7 +1,5 @@
-<%= render partial: 'shared/header' %>
-
 <h1><%= t('new_link') %></h1>
-        <%= form_with scope: :link, class: 'col-10 offset-1', url: links_path, local: true do |form| %>
+        <%= form_with(model: @link, local: true, class: 'col-10 offset-1') do |form| %>
             <%= render partial: 'fields', locals: {'form': form}%>
             <div class="d-flex justify-content-center">
                 <%= form.submit t('form_save'), :class => 'col-4 btn btn-success' %>
