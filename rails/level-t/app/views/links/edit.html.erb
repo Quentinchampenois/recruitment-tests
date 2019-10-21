@@ -1,9 +1,9 @@
 <%= render partial: 'shared/header' %>
-    <h1>Éditer un lien</h1>
+    <h1><%= t('edit_link') %></h1>
 
     <%= form_with(model: @link, local: true, class: 'col-10 offset-1') do |form| %>
         <%= render partial: 'fields', locals: {'form': form}%>
         <div class="d-flex justify-content-center">
-            <%= form.submit 'Modifier', :class => 'col-4 btn btn-info' %>
+            <%= form.submit t('form_edit'), :class => 'col-4 btn btn-info' %>
         </div>
     <% end %>

@@ -2,15 +2,13 @@ class LinksController < ApplicationController
     RANDOM_RECORD_LIMIT = 6
     # index page
     def index
-        # verification of actual records count
-        # if this count is greater than RANDOM_RECORD_LIMIT then random records are displayed, otherwise it display all records
-        if Link.count() > RANDOM_RECORD_LIMIT
-            #@links = Link.all.sample(RANDOM_RECORD_LIMIT)
-            # https://github.com/haopingfan/quick_random_records - Performant random records
-                # source: https://stackoverflow.com/a/50409630/11018979
+        #@links = Link.all.sample(RANDOM_RECORD_LIMIT)
+        # https://github.com/haopingfan/quick_random_records - More performant random records
+              # source: https://stackoverflow.com/a/50409630/11018979
+        if Link.nil? # avoid error NilClass when db is empty
             @links = Link.random_records(RANDOM_RECORD_LIMIT)
         else
-           @links = Link.all
+            @links = Link.all
         end
         @links
     end
@@ -68,7 +66,7 @@ class LinksController < ApplicationController
 
     # Redirect user if the link is not found, else return the link
     # Param: id : Integer, redirect_url: String
-    # return Link || rescue
+    # return Link || rescue RecordNotFound => redirect
     private
     def find_or_redirect(id, redirect_url=links_path)
         Link.find(id)

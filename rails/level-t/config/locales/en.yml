@@ -30,4 +30,21 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  new_link: "Create new link"
+  edit_link: "Edit this link"
+  no_links: "There is no links"
+
+  link_list: "All links list"
+
+# forms
+  form_edit: "Edit"
+  form_save: "Save"
+  field_title: 'Title'
+  field_description: 'Description'
+  field_name: 'Full name'
+  field_link: 'Full link url'
+
+  action:
+    show: "Show"
+    edit: "edit"
+    delete: "Remove"
