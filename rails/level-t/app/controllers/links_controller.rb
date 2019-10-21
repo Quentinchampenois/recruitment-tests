@@ -5,11 +5,9 @@ class LinksController < ApplicationController
         #@links = Link.all.sample(RANDOM_RECORD_LIMIT)
         # https://github.com/haopingfan/quick_random_records - More performant random records
               # source: https://stackoverflow.com/a/50409630/11018979
-        if Link.nil? # avoid error NilClass when db is empty
-            @links = Link.random_records(RANDOM_RECORD_LIMIT)
-        else
-            @links = Link.all
-        end
+         # avoid error NilClass when db is empty
+        @links = Link.nil? ? Link.random_records(RANDOM_RECORD_LIMIT) : Link.all
+
         @links
     end
 

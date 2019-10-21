@@ -1,0 +1,11 @@
+<%= render partial: 'shared/header' %>
+
+<p id="notice"><%= notice %></p>
+
+
+<section>
+    <%= render 'map', url: @address.name%>
+</section>
+
+<%= link_to 'Edit', edit_address_path(@address) %> |
+<%= link_to 'Back', addresses_path %>
