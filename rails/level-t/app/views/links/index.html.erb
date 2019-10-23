@@ -18,5 +18,8 @@
     <hr>
     <section>
         <h3><%= t('url_shortener_title') %></h3>
+        <%= form_with(model: @shortener, local: true) do |form| %>
+            <%= render partial: 'shorteners/form', locals: {'form': form}%>
+        <% end %>
     </section>
 </main>

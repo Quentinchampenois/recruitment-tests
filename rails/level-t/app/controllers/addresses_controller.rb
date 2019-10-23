@@ -7,7 +7,7 @@ class AddressesController < ApplicationController
   def index
    if current_user
      @addresses = current_user.address_ids
-     @addresses = Address.all.where("user_id = ?", current_user.id)
+     @addresses = Address.all.where(user_id: current_user.id)
    else
      redirect_to new_user_session_path, notice: 'You are not logged in.'
    end
@@ -21,10 +21,6 @@ class AddressesController < ApplicationController
   # GET /addresses/new
   def new
     @address = Address.new
-  end
-
-  # GET /addresses/1/edit
-  def edit
   end
 
   # POST /addresses
@@ -57,10 +53,8 @@ class AddressesController < ApplicationController
   # DELETE /addresses/1
   # DELETE /addresses/1.json
   def destroy
-    @address.destroy
-    respond_to do |format|
-      format.html { redirect_to addresses_url, notice: 'Address was successfully destroyed.' }
-      format.json { head :no_content }
+    if @address.destroy
+        redirect_to addresses_path
     end
   end
 
@@ -72,7 +66,7 @@ class AddressesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def address_params
-      params.fetch(:address, {}).permit(:name, :user_id)
+      params.require(:address).permit(:name, :user_id)
     end
 
 end

@@ -1,7 +1,7 @@
 class ShortenersController < ApplicationController
     # https://medium.com/@noestauffert/building-a-url-shortener-with-rails-5-ece84f59b6a3 - Understand logic of url shortener as well as random chars generate
 
-    URL_BASE = 'short.ed/'
+    URL_BASE = 'psu/'
 
     def index
         @shorteners = Shortener.all
@@ -19,6 +19,7 @@ class ShortenersController < ApplicationController
     def create
         @shortener = Shortener.new(filter_params)
 
+        # Generate a one dimension array with a-zA-Z0-9 and get 8 random chars
         all_chars = ['0'..'9', 'A'..'Z', 'a'..'z'].map { |range| range.to_a }.flatten
         @shortener.shorted_url = URL_BASE + 8.times.map { all_chars.sample }.join
         if @shortener.save
@@ -28,6 +29,7 @@ class ShortenersController < ApplicationController
         end
     end
 
+    # Destroy an url
     def destroy
         @shortener = find_or_redirect(params[:id])
 

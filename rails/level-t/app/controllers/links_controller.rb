@@ -7,6 +7,7 @@ class LinksController < ApplicationController
               # source: https://stackoverflow.com/a/50409630/11018979
          # avoid error NilClass when db is empty
         @links = Link.nil? ? Link.random_records(RANDOM_RECORD_LIMIT) : Link.all
+        @shortener = Shortener.new
     end
 
     # Page for one link
@@ -42,7 +43,7 @@ class LinksController < ApplicationController
         if @link.update(filter_params)
             redirect_to @link
         else
-            render 'edit'
+            render :edit
         end
     end
 
