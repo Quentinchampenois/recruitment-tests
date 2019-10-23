@@ -1,0 +1,15 @@
+<%= render partial: 'shared/header' %>
+
+<main class="container">
+    <% @shorteners.each do |sh| %>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title"><%= link_to sh.shorted_url, "/#{sh.shorted_url}", target: '_blank', class: 'card-subtitle mb-2 text-muted' %></h5>
+            <p class="card-text"><%= sh.original_url %></p>
+            <%= link_to t('action.delete'), shortener_path(sh),
+            method: :delete,
+            data: { confirm: t('confirm_link_delete') }, class: 'btn btn-danger' %>
+        </div>
+    </div>
+    <% end %>
+</main>

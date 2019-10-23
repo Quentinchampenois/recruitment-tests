@@ -1,0 +1,25 @@
+
+<main class="container">
+    <section>
+        <% if @links.count > 0 %>
+            <div class="d-flex flex-wrap">
+                <%= render partial: 'linklist', locals: {'links': @links} %>
+            </div>
+        <% else %>
+            <p class="alert alert-danger"><%= t('no_links') %></p>
+        <% end%>
+    </section>
+    <hr>
+    <section>
+        <h3><%= t('new_link') %></h3>
+        <%= link_to t('new_link'), new_link_path, class: 'btn btn-success' %>
+
+    </section>
+    <hr>
+    <section>
+        <h3><%= t('url_shortener_title') %></h3>
+        <%= form_with(model: @shortener, local: true) do |form| %>
+            <%= render partial: 'shorteners/form', locals: {'form': form}%>
+        <% end %>
+    </section>
+</main>

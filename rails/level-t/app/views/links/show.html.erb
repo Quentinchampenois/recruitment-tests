@@ -1,0 +1,14 @@
+<%= render partial: 'shared/header' %>
+
+<div>
+    <h1><%= @link.title %></h1>
+</div>
+<div>
+    <p><%= @link.description %></p>
+</div>
+
+<div>
+    <p><%= @link.name %></p>
+</div>
+
+<%= link_to "Accéder au lien", "http://#{@link.link}", target: '_blank'%>

@@ -1,3 +1,4 @@
+require 'date'
 class Test
   def input
     {
@@ -15,5 +16,26 @@ class Test
   end
 
   def output
+     input = input()
+     rentals = []
+
+     input[:rentals].each do |rent|
+        car_id = rent[:car_id]
+        # Find informations about car booked
+        car = input[:cars].find { |car| car[:id] == car_id }
+
+        end_date, start_date = Date.parse(rent[:end_date]), Date.parse(rent[:start_date])
+        # Rent period is the difference between end_date rent and start_date with +1 to get the price until the last day
+        rent_period = (end_date - start_date).to_i + 1
+
+        rentals << {
+            :id => rent[:id],
+            :price => ( rent_period * car[:price_per_day] ) + ( rent[:distance] * car[:price_per_km] )
+        }
+     end
+
+     {
+        "rentals": rentals
+     }
   end
 end

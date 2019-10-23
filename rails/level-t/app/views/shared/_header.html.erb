@@ -1,0 +1,41 @@
+<header class="p-3 mb-5">
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark mb-3">
+    <a class="navbar-brand" href="/">QC</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+                <%= link_to t('link_list'), links_path, :class=>"nav-link" %>
+            </li>
+            <li class="nav-item">
+                <%= link_to t('new_link'), new_link_path, :class=>"nav-link" %>
+            </li>
+
+            <% if current_user %>
+                <li class="nav-item nav-link">
+                    <%= current_user.email %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to "Log out", destroy_user_session_path,:class=>"nav-link", :method => :delete %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to t('My addresses'), addresses_path, :class=>"nav-link" %>
+                </li>
+            <% else %>
+                <li class="nav-item">
+                    <%= link_to t('Sign in'), new_user_session_path, :class=>"nav-link" %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to t('sign up'), new_user_registration_path, :class=>"nav-link" %>
+                </li>
+            <% end %>
+
+        </ul>
+    </div>
+
+</nav>
+</header>

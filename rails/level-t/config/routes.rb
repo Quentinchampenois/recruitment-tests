@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  devise_for :users
+  resources :addresses
+  resources :links
+
+  resources :shorteners
+  #resources :shorteners, only: [:index, :show, :new, :create, :destroy]
+  root 'links#index'
+  get '/:short_url', to: 'shorteners#show'
 end
