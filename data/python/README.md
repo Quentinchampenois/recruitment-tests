@@ -9,7 +9,7 @@ To install pytest, type in a terminal:
 **Instructions:**
 * For each level, make test(s) go green.
 
-### Level P
+### Fizzbuzz
 The Fizzbuzz programm is a classical game with simple rules: you must count from 1 until a given integer. If your integer is a multiple of 3, you must say 'fizz'. If it's a multiple of 5, you must say 'buzz'. For multiples of 3 and 5 you should obviously say 'fizzbuzz'. For any other case, just say the integer.
 Implement the `fizzbuzz` function receiving an integer as an argument and following these rules. Your solution must return an array correctly filled. Return an empty array if the given integer is less or equal than 0.
 
@@ -24,9 +24,9 @@ Given `0` your solution will return `[]`
 
 **Run test:**
 
-``pytest ./level-p/``
+``pytest ./fizzbuzz/``
 
-### Level Y
+### Climate Metadata
 A climatologist contacts you to help him compute metadata based on temperatures measured this year. Giving you an array of temperatures, he wants to have the median, the average, min and max temperature of the dataset.
 
 Your function will take as input an array of temperatures and return an array containing the 4 wanted computation wanted : median, average, min and max. If the length of the dataset is odd, the median will be the average of the two 'central' numbers (e.g median of `[1,2]` is `1.5`). All values should be rounded at 10<sup>-1</sup> (e.g `1.52` will be rounded to `1.5`, `1.67` will be rounded to `1.7`). Consider 
@@ -44,9 +44,9 @@ Given `[78.89]` your function will return `[78.9, 78.9,78.9, 78.9]`
 
 **Run test:**
 
-``pytest ./level-y/``
+``pytest ./climate-metadata/``
 
-### Level T
+### Palindromes
 Palindromes are strings that can be read either from left to right or right to left indifferently, conditioning the removal of some characters like commas or spaces. Here is a few examples: `kayak`, `tenet`, `Satan, oscillate my metallic sonatas`.
 
 Complete the `is_palindrome` function which receives a string as an argument and returns True if the string is a palindrome or False else.
@@ -62,10 +62,10 @@ Given `"Tu l'as trop ecrase Cesar, ce port-salut!"` your function will return `T
 
 **Run test:**
 
-``rspec ./level-t/``
+``rspec ./palindromes/``
 
-### Level H
-The town of Democracity decided to organize a participatory budget to encourage citizens to take part to the decision process. A participatory budget is a procedure that help deciding the major what projects should be conducted by the city.
+### Town of democracy
+The town of Democracy decided to organize a participatory budget to encourage citizens to take part to the decision process. A participatory budget is a procedure that help deciding the major what projects should be conducted by the city.
 
 Given a list of projects previously set, each citizen gives points to each projects. You're working in a famous company which deploys the democracy software that ship this participatory budget, and we ask you know to determine the final rankings.
 
@@ -87,4 +87,4 @@ Given `1, [(8,9)], 0` you should return `No projects, sorry!`
 
 **Run test:**
 
-``python ./level-h/``
+``python ./town-of-democracy/``
