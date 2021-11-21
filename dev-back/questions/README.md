@@ -1,22 +1,19 @@
 # Questions
 **Instructions:** Answer the questions, be concise.
 
-## What is an Object?
+1. What is an Object?
 
-    Answer ->
+        Answer ->
 
-## Can you explain the difference between include and extend in Ruby?
+1. Can you explain the difference between include and extend in Ruby?
 
-    Answer ->
+        Answer ->
 
-## Is testing a waste of money? Why?
+1. Is testing a waste of money? Why?
 
-    Answer ->
+        Answer ->
 
-## A real estate developer has constructed a more than 100-storey building in the heart of Manhattan. Several months after the inauguration, residents complain about slow elevators, what can the real estate developer do to solve this problem?
+1. A real estate developer has constructed a more than 100-storey building in the heart of Manhattan. Several months after the inauguration, residents complain about slow elevators, what can the real estate developer do to solve this problem?
 
-    Answer ->
+        Answer ->
 
-## Set up a challenge for another candidate in order to test his/her abilities, explain your choice.
-
-    Answer ->

@@ -2,7 +2,7 @@
 
 Hello, thank you for reading our tests ! You probably are in contact with us to join the Data team.
 
-This recruitment tests was created by Open Source Politics's team, please do not hesitate to ask us if you are encountering any issue or problematic.
+Please do not hesitate to ask us if you are encountering any issue or if you are stuck on a level.
 
 ## Procedure
 
