@@ -27,4 +27,10 @@ Réponse ->
 Réponse -> 
 ```
 
-C'est bon pour nous !
+5. Imagine un challenge pour un.e autre candidat.e permettant d'évaluer ses compétences, explique ce choix.
+
+```
+Réponse -> 
+```
+
+C'est bon pour nous, merci à toi !
